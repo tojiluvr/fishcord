@@ -1,54 +1,88 @@
-/* Prevent scrolling on the page */
-html, body {
-  height: 100%;
+/* Reset body margin */
+body {
   margin: 0;
-  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background-color: #f1f1f1;
 }
 
-/* Profile Section */
-.user-profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  margin-top: 50px;
-}
-
-#profile-pic {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  border: 2px solid #7289da;
-  object-fit: cover;
-}
-
-#username-input {
-  width: 100%;
-  padding: 8px;
-  border-radius: 4px;
-  border: none;
+/* Sidebar Styling */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  background-color: #2f3136;
+  color: white;
+  padding: 15px;
   text-align: center;
 }
 
-/* Custom upload button */
-.upload-button {
-  padding: 10px 15px;
+#profile-pic-sidebar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.user-profile {
+  width: 100%;
+  text-align: center;
+  padding: 30px;
+  background-color: #2f3136;
+}
+
+#profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+#username-input, #image-url-input {
+  padding: 10px;
+  width: 80%;
+  margin: 5px;
+  border-radius: 8px;
+}
+
+button {
+  padding: 10px;
   background-color: #7289da;
   color: white;
   border-radius: 8px;
+  border: none;
   cursor: pointer;
-  display: inline-block;
   margin-top: 10px;
-  font-size: 16px;
 }
 
-#profile-upload {
-  display: none;
+/* Chatroom */
+.chatroom-container {
+  margin-left: 270px;
+  padding: 20px;
 }
 
-#image-url-input {
-  padding: 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  width: 100%;
+.message-container {
+  max-height: 500px;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.message {
+  background-color: #4f545c;
+  color: #dcddde;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.input-section {
+  display: flex;
+  gap: 10px;
+}
+
+#message-input {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #40444b;
 }

@@ -1,27 +1,23 @@
 // Function to handle profile picture upload
-function updateProfilePic() {
-    const fileInput = document.getElementById('file-upload');
-    const profilePic = document.getElementById('profile-pic');
-    
-    const file = fileInput.files[0];
+document.getElementById('file-upload').addEventListener('change', function(event) {
+    const file = event.target.files[0]; // Get the file selected
     if (file) {
         const reader = new FileReader();
-        reader.onload = function(event) {
-            profilePic.src = event.target.result; // Update profile picture with the uploaded image
+        reader.onload = function(e) {
+            const profilePic = document.getElementById('profile-pic');
+            profilePic.src = e.target.result; // Set the image source to the uploaded file
         };
-        reader.readAsDataURL(file); // Read the image file as a Data URL
+        reader.readAsDataURL(file); // Read the file as Data URL
     }
-}
+});
 
-// Function to update the username
-function updateUsername() {
-    const usernameInput = document.getElementById('username-input');
+// Function to update username in real-time
+document.getElementById('username-input').addEventListener('input', function(event) {
+    const username = event.target.value.trim();
     const displayUsername = document.getElementById('display-username');
-    
-    const username = usernameInput.value.trim(); // Get the username input
     if (username) {
-        displayUsername.textContent = username; // Update the username display
+        displayUsername.textContent = username; // Set the displayed username to the input value
     } else {
-        displayUsername.textContent = "Your Name"; // Default placeholder text
+        displayUsername.textContent = 'Your Name'; // Default text when the input is empty
     }
-}
+});

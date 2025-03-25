@@ -18,6 +18,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    z-index: 10; /* Ensure it’s on top of the chatroom */
 }
 
 /* Profile Section */
@@ -46,20 +47,21 @@ html, body {
 
 /* Chatroom Styling */
 .chatroom-container {
-    margin-left: 270px; /* Move it 20px to the right */
-    width: calc(100% - 270px); /* Stretch the width to cover the remaining space */
-    height: 100vh; /* Ensures full height without scroll */
-    background-color: #36393f; /* Darker background for the chatroom */
+    margin-left: 270px; /* Push the chatroom to the right, ensuring space for the sidebar */
+    width: calc(100% - 270px); /* Stretch the chatroom to the remaining space */
+    height: 100vh;
+    background-color: #36393f;
     display: flex;
     flex-direction: column;
 }
 
+/* Message Container */
 .message-container {
     flex-grow: 1;
     padding: 20px;
     overflow-y: auto;
     border-bottom: 1px solid #40444b;
-    background-color: #36393f; /* Darker background for the message container */
+    background-color: #36393f;
 }
 
 /* Message Styling */
@@ -113,10 +115,12 @@ button {
     cursor: pointer;
 }
 
+/* Hidden class for the login screen */
 .hidden {
     display: none;
 }
 
+/* Login Container Styling */
 .login-container {
     text-align: center;
     padding: 50px;

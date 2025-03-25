@@ -18,6 +18,7 @@ html, body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 20px;
 }
 
 /* Profile Section */
@@ -52,13 +53,14 @@ html, body {
   background-color: #36393f;
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 
 .message-container {
   flex-grow: 1;
-  padding: 20px;
   overflow-y: auto;
   border-bottom: 1px solid #40444b;
+  padding: 10px;
 }
 
 .message {
@@ -69,6 +71,12 @@ html, body {
   margin-bottom: 10px;
   background-color: #4f545c;
   border-radius: 8px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }
 
 .username {

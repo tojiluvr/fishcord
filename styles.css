@@ -1,0 +1,54 @@
+/* Prevent scrolling on the page */
+html, body {
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Profile Section */
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 50px;
+}
+
+#profile-pic {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #7289da;
+  object-fit: cover;
+}
+
+#username-input {
+  width: 100%;
+  padding: 8px;
+  border-radius: 4px;
+  border: none;
+  text-align: center;
+}
+
+/* Custom upload button */
+.upload-button {
+  padding: 10px 15px;
+  background-color: #7289da;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+#profile-upload {
+  display: none;
+}
+
+#image-url-input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+}

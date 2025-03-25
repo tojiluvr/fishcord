@@ -7,23 +7,24 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Password Screen -->
-  <div id="password-screen">
-    <h2>Enter Password to Access Fishcord</h2>
-    <input type="password" id="password-input" placeholder="Enter password" />
-    <button onclick="checkPassword()">Enter</button>
+
+  <!-- Profile Section -->
+  <div class="user-profile">
+    <h2>Fishcord Profile</h2>
+    <img id="profile-pic" src="" alt="Profile Picture" />
+    
+    <!-- Profile Picture Upload -->
+    <input type="file" id="profile-upload" accept="image/*" onchange="previewProfilePicFromFile(event)" />
+    <p>OR</p>
+    <input type="text" id="image-url-input" placeholder="Enter image URL" onchange="previewProfilePicFromURL()" />
+
+    <!-- Username Input -->
+    <input type="text" id="username-input" placeholder="Enter your username" />
+
+    <!-- Button to go to the Chatroom -->
+    <button onclick="startChat()">Go to Chat</button>
   </div>
 
-  <script>
-    function checkPassword() {
-      const password = document.getElementById('password-input').value;
-      const correctPassword = 'tojiluvr69';  // Update this password if needed
-      if (password === correctPassword) {
-        document.getElementById('password-screen').style.display = 'none';  // Hide password screen
-      } else {
-        alert('Incorrect password. Try again.');
-      }
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

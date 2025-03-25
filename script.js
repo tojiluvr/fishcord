@@ -53,9 +53,14 @@ function sendMessage() {
     textElement.classList.add("text");
     textElement.textContent = messageText;
 
-    // Append profile pic, username, and message text to the message
-    messageElement.appendChild(avatarElement);
-    messageElement.appendChild(usernameElement);
+    // Create a container to hold both profile picture and username together
+    const avatarAndUsernameContainer = document.createElement("div");
+    avatarAndUsernameContainer.classList.add("avatar-username-container");
+    avatarAndUsernameContainer.appendChild(avatarElement);
+    avatarAndUsernameContainer.appendChild(usernameElement);
+
+    // Append the new elements to the message element
+    messageElement.appendChild(avatarAndUsernameContainer);
     messageElement.appendChild(textElement);
 
     // Append new message to container

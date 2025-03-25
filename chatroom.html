@@ -5,47 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fishcord Chat</title>
   <link rel="stylesheet" href="styles.css">
-  <script src="script.js"></script>
 </head>
 <body>
-  <!-- Sidebar -->
+
+  <!-- Sidebar for User Info -->
   <div class="sidebar">
-    <h2>Fishcord</h2>
-  </div>
-
-  <!-- Profile Section -->
-  <div class="user-profile">
-    <h2>Profile</h2>
-    <img id="profile-pic" src="" alt="Profile Picture" />
-    
-    <!-- File Upload -->
-    <input type="file" id="profile-upload" accept="image/*" onchange="previewProfilePicFromFile(event)" />
-
-    <p>OR</p>
-
-    <!-- Image URL Input -->
-    <input type="text" id="image-url-input" placeholder="Enter image URL" onchange="previewProfilePicFromURL()" />
-    
-    <input type="text" id="username-input" placeholder="Enter your username" />
+    <h2>Fishcord Chat</h2>
+    <img id="profile-pic-sidebar" src="" alt="Profile Picture" />
+    <p id="username-sidebar">User</p>
   </div>
 
   <!-- Chat Room -->
   <div class="chatroom-container">
-    <h1>Fishcord Chat</h1>
-
-    <!-- Messages Section -->
-    <div id="message-container" class="message-container">
-      <!-- Example message (These will be generated dynamically later) -->
-      <div class="message">
-        <span class="username">Toji:</span>
-        <span class="text">Hey, how's it going?</span>
-      </div>
-      <div class="message">
-        <span class="username">Friend:</span>
-        <span class="text">Good! What’s up?</span>
-      </div>
-    </div>
-
+    <div id="message-container" class="message-container"></div>
+    
     <!-- Input Section -->
     <div class="input-section">
       <input type="text" id="message-input" placeholder="Type a message...">
@@ -53,59 +26,6 @@
     </div>
   </div>
 
-  <script>
-    // Function to simulate sending a message
-    function sendMessage() {
-      const messageInput = document.getElementById("message-input");
-      const messageText = messageInput.value;
-      if (messageText.trim() !== "") {
-        const messageContainer = document.getElementById("message-container");
-        
-        // Create new message element
-        const messageElement = document.createElement("div");
-        messageElement.classList.add("message");
-
-        // Simulate username and message content
-        const usernameElement = document.createElement("span");
-        usernameElement.classList.add("username");
-        usernameElement.textContent = "Toji:"; // Placeholder for the username
-
-        const textElement = document.createElement("span");
-        textElement.classList.add("text");
-        textElement.textContent = messageText;
-
-        // Add username and message to the message element
-        messageElement.appendChild(usernameElement);
-        messageElement.appendChild(textElement);
-
-        // Append the new message to the container
-        messageContainer.appendChild(messageElement);
-
-        // Clear the input field
-        messageInput.value = "";
-        
-        // Scroll to the bottom of the message container
-        messageContainer.scrollTop = messageContainer.scrollHeight;
-      }
-    }
-
-    // Preview Profile Picture from File Upload
-    function previewProfilePicFromFile(event) {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = function (e) {
-          document.getElementById("profile-pic").src = e.target.result;
-        };
-        reader.readAsDataURL(file);
-      }
-    }
-
-    // Preview Profile Picture from URL Input
-    function previewProfilePicFromURL() {
-      const url = document.getElementById("image-url-input").value;
-      document.getElementById("profile-pic").src = url;
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -30,6 +30,9 @@ function sendMessage() {
   const messageInput = document.getElementById("message-input");
   const messageText = messageInput.value;
 
+  const usernameInput = document.getElementById("username-input");
+  const username = usernameInput.value.trim() || "Anonymous"; // Default to "Anonymous" if no username
+
   if (messageText.trim() !== "") {
     const messageContainer = document.getElementById("message-container");
 
@@ -37,16 +40,21 @@ function sendMessage() {
     const messageElement = document.createElement("div");
     messageElement.classList.add("message");
 
-    // Add username and message content
+    // Create profile pic and username elements
+    const avatarElement = document.createElement("img");
+    avatarElement.src = document.getElementById("profile-pic").src || "default-avatar.png"; // Default to a placeholder if no profile pic
+    avatarElement.classList.add("avatar");
+
     const usernameElement = document.createElement("span");
     usernameElement.classList.add("username");
-    usernameElement.textContent = "Toji:"; // Placeholder for username
+    usernameElement.textContent = username;
 
     const textElement = document.createElement("span");
     textElement.classList.add("text");
     textElement.textContent = messageText;
 
-    // Append username and text to message element
+    // Append profile pic, username, and message text to the message
+    messageElement.appendChild(avatarElement);
     messageElement.appendChild(usernameElement);
     messageElement.appendChild(textElement);
 
